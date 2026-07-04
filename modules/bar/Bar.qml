@@ -13,7 +13,7 @@ PanelWindow{
     }
 
     implicitHeight: 30
-    color : '#1e1e2e'
+    color : '#1d1206'
 
     
     Rectangle {
@@ -108,15 +108,5 @@ PanelWindow{
                 Tray{}
             }
         }
-    }
-
-    Rectangle{
-        id : notifAnchor
-        height : parent.height
-        width : 10
-        anchors.right : parent.right
-        anchors.top : parent.top
-        color : "transparent"
-        Notif{}
     }
 }

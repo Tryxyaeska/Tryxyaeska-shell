@@ -6,7 +6,7 @@ Item {
     width: parent.width
     height: parent.height
 
-    property color boxColor: "#5151a5"
+    property color boxColor: '#5e2e0e'
     property int arrowDepth: 12 
 
     property int border: 1
