@@ -104,18 +104,18 @@ Item {
                 
                     //Turn Wifi ON/OFF
                     Rectangle {
-                        width: 50; height: 50; color: btn1.containsMouse ? "#313244" : "transparent"; radius: 5;
+                        width: 50; height: 50; color: "transparent"; radius: 5;
                         
                         Image { 
                             anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/network/wifi (4).svg"
-                            opacity: (Networking.wifiEnabled) ? 1 : 0
+                            opacity: (Networking.wifiEnabled) ? btn1.containsMouse ? 1 : 0.7 : 0
                             Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad } }
                         }
                         Image { 
                             anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/network/wifiOff.svg"
-                            opacity: (Networking.wifiEnabled) ? 0 : 1
+                            opacity: (Networking.wifiEnabled) ? 0 : btn1.containsMouse ? 1 : 0.7
                             Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad } }
                         }
                         
@@ -132,20 +132,20 @@ Item {
                     //Networking ON/OFF Toggle
                     Rectangle {
                         id: netContainer
-                        width: 50; height: 50; color: btn2.containsMouse ? "#313244" : "transparent"; radius: 5
+                        width: 50; height: 50; color: "transparent"; radius: 5
                         property bool isNetOn: Networking.wifi ? Networking.wifiEnabled : true
                         
                         Image { 
                             anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/network/networkOn.svg"
-                            opacity: netContainer.isNetOn ? 1 : 0
+                            opacity: netContainer.isNetOn ? btn2.containsMouse ? 1 : 0.7 : 0
                             Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad } }
                         }
                         
                         Image { 
                             anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/network/networkOff.svg"
-                            opacity: netContainer.isNetOn ? 0 : 1
+                            opacity: netContainer.isNetOn ? 0 : btn2.containsMouse ? 1 : 0.7
                             Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad } }
                         }
                         
@@ -161,8 +161,10 @@ Item {
 
                     //Edit Connections
                     Rectangle {
-                        width: 50; height: 50; color: btn3.containsMouse ? "#313244" : "transparent"; radius: 5
-                        Image { anchors.centerIn: parent; width: 24; height: 24; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/network/edit.svg" }
+                        width: 50; height: 50; color: "transparent"; radius: 5
+                        Image { anchors.centerIn: parent; width: 24; height: 24; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/network/edit.svg" 
+                        opacity: btn3.containsMouse ? 1 : 0.7
+                        Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad}}}
                         MouseArea { 
                             id: btn3; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor
                             onClicked: { osCommand.cmd = "nm-connection-editor"; osCommand.running = true; myPopup.toggle() } 
@@ -188,8 +190,10 @@ Item {
                 
                     //Connection Information
                     Rectangle {
-                        width: 50; height: 50; color: btn5.containsMouse ? "#313244" : "transparent"; radius: 5;
-                        Image { anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true; source: "svgs/network/info.svg" }
+                        width: 50; height: 50; color: "transparent"; radius: 5;
+                        Image { anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true; source: "svgs/network/info.svg" 
+                        opacity : btn5.containsMouse ? 1 : 0.7
+                        Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad}}}
                         MouseArea { 
                             id: btn5; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor
                             onClicked: { osCommand.cmd = "nm-connection-editor"; osCommand.running = true; myPopup.toggle() } 
@@ -198,8 +202,10 @@ Item {
 
                     //Connect To a Hidden Network
                     Rectangle {
-                        width: 50; height: 50; color: btn6.containsMouse ? "#313244" : "transparent"; radius: 5
-                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/network/hidden.svg" }
+                        width: 50; height: 50; color: "transparent"; radius: 5
+                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/network/hidden.svg" 
+                        opacity : btn6.containsMouse ? 1 : 0.7
+                        Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad}}}
                         MouseArea { 
                             id: btn6; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor
                             onClicked: { osCommand.cmd = "nm-connection-editor -c -t 802-11-wireless"; osCommand.running = true; myPopup.toggle() } 
@@ -208,8 +214,10 @@ Item {
 
                     //Create New Wifi Network
                     Rectangle {
-                        width: 50; height: 50; color: btn7.containsMouse ? "#313244" : "transparent"; radius: 5
-                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/network/create.svg" }
+                        width: 50; height: 50; color: "transparent"; radius: 5
+                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/network/create.svg" 
+                        opacity : btn7.containsMouse ? 1 : 0.7
+                        Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad}}}
                         MouseArea { 
                             id: btn7; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor
                             onClicked: { osCommand.cmd = "nm-connection-editor -c -t 802-11-wireless"; osCommand.running = true; myPopup.toggle() } 
@@ -353,7 +361,7 @@ Item {
                 Rectangle {
                     id: scanContainer
                     width: parent.width; height: 35; radius: 5;
-                    color: scanMouse.containsMouse ? "#313244" : "transparent"
+                    color: "transparent"
                     
                     property bool isScanning: false
 
@@ -365,7 +373,7 @@ Item {
                     Text { 
                         anchors.verticalCenter: parent.verticalCenter; anchors.left: parent.left; anchors.leftMargin: 5;
                         font.pixelSize: 14; font.bold: true; 
-                        color: scanContainer.isScanning ? "#a6adc8" : "#a6adc8"; 
+                        color: scanMouse.containsMouse ? "#FFFFFF" : "#a6adc8"; 
                         text: scanContainer.isScanning ? "Available Networks (SCNG)" : "Available Networks (RSCN)"
                         Behavior on color { ColorAnimation { duration: 150 } }
                     }
@@ -425,14 +433,16 @@ Item {
                             model: avlConnsMain.children.values
                             delegate: Rectangle {
                                 width: parent.width; height: 35; radius: 5; 
-                                color: avlNetworkMouse.containsMouse ? "#313244" : "transparent"
+                                color: "transparent"
                                 
                                 Row {
                                     anchors.verticalCenter: parent.verticalCenter
                                     anchors.left: parent.left; anchors.leftMargin: 5; spacing: 10
                                     
                                     Image {
-                                        width: 16; height: 16; opacity: 0.85; anchors.verticalCenter: parent.verticalCenter 
+                                        width: 16; height: 16; anchors.verticalCenter: parent.verticalCenter 
+                                        opacity : avlNetworkMouse.containsMouse ? 1 : 0.7
+                                        Behavior on opacity { NumberAnimation { duration: 150; easing.type: Easing.OutQuad}}
                                         source: if(Networking.wifiEnabled){
                                             if(getWifiStrength(modelData.text) * 100 >= 75){
                                                 "svgs/network/wifi (4).svg"
@@ -446,8 +456,9 @@ Item {
                                         }
                                     }
                                     Text {
-                                        font.pixelSize: 14; font.bold: false; color: "white"; anchors.verticalCenter: parent.verticalCenter 
+                                        font.pixelSize: 14; font.bold: false; color: avlNetworkMouse.containsMouse ? "#FFFFFF" : "#a6adc8"; anchors.verticalCenter: parent.verticalCenter 
                                         text: modelData.text
+                                        Behavior on color {ColorAnimation{ duration: 150 }}
                                     }
                                 }
                                 MouseArea {

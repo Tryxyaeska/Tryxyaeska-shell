@@ -3,6 +3,7 @@ import QtQuick
 import Quickshell.Services.Notifications
 import Quickshell.Wayland
 import QtQuick.Layouts
+import QtQuick.Effects
 
 Item{
     id : notifMainAnchor
@@ -59,22 +60,29 @@ Item{
                     // property int revIndex: notifServer.trackedNotifications.values.length - 1 - index
                     // property var revArr: notifServer.trackedNotifications.values[revIndex]
                     color : '#e6000000'
+                    Image {
+                        width: parent.width; height: parent.height; anchors.fill: parent
+                        fillMode: Image.PreserveAspectCrop; smooth: true; mipmap: true; antialiasing: true;
+                        source: "/mnt/data/Utility OG/Pictures/download (70) (Edited) (3).jpg"; 
+                        opacity: 0.433; layer.enabled: true
+                        layer.effect: MultiEffect {
+                            blurEnabled: true; blurMax: 16; blur: 0.6
+                            shadowEnabled: false; shadowColor: "#000000"
+                            shadowBlur: 0; shadowVerticalOffset: 0
+                            brightness: 0; contrast: 0.233; saturation: 0.333
+                            colorization: 0.2; colorizationColor: "#1e1e2e"
+                        }
+                    }
                     border.width : if(modelData.urgency === NotificationUrgency.Critical){
-                        2
-                    }else{
-                        1
-                    }
-                    border.color : if(modelData.urgency === NotificationUrgency.Critical){
-                        '#f63c09'
-                    }else{
-                        "#FFFFFF"
-                    }
-
-                    Timer{
-                        interval : 3000
-                        running : true
-                        onTriggered  : modelData.dismiss()
-                    }
+                                        2
+                                    }else{
+                                        1
+                                    }
+                                    border.color : if(modelData.urgency === NotificationUrgency.Critical){
+                                        '#ff0048'
+                                    }else{
+                                        "#FFFFFF"
+                                    }
                     
                     RowLayout{
                         id : imgNtext
@@ -111,6 +119,7 @@ Item{
                                 wrapMode: Text.WordWrap
                                 font.pixelSize : 14
                                 text : modelData.body
+                                font.bold : false
                                 Layout.fillWidth : true
                             }
                         }
@@ -119,6 +128,12 @@ Item{
                         anchors.fill : parent
                         cursorShape : Qt.PointingHandCursor
                         onClicked : modelData.dismiss()
+                    }
+
+                    Timer{
+                        interval : 3000
+                        running : true
+                        onTriggered  : modelData.dismiss()
                     }
                 }
             }

@@ -60,6 +60,17 @@ Item {
         parentWindow: statusBar
         popupWidth: 250
         popupHeight: 220 
+        menuGap : -2
+        anmtSrc : "/mnt/data/Utility OG/Pictures/download.gif"
+        blurEnabled : true
+        blur : 0.6
+        blurMax : 8
+        contrast : 0.333
+        saturation : 0.3
+        imgOpac : 0.3
+        brightness : 0.0
+        colorization : 0.344
+        colorizationColor : '#1e1e2e'
 
         Flickable {
             anchors.fill: parent
@@ -69,45 +80,45 @@ Item {
 
             Column {
                 id: menuLayout
-                width: parent.width
                 spacing: 4
+                anchors.horizontalCenter : parent.horizontalCenter
                 
                 Row {
                     id: row1
-                    width: parent.width
                     spacing: 30
                 
                     Rectangle {
-                        width: 50; height: 50; color: btn1.containsMouse ? "#313244" : "transparent"; radius: 5;
+                        width: 50; height: 50; color: "transparent"; radius: 5;
                         Image { anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/bluetooth/bluetooth.svg"
-                            opacity : Bluetooth.defaultAdapter.enabled ? 1 : 0
+                            opacity : Bluetooth.defaultAdapter.enabled ? btn1.containsMouse ? 1 : 0.7 : 0
                             Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
                         Image { anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/bluetooth/bluetoothOff.svg"
-                            opacity : Bluetooth.defaultAdapter.enabled ? 0 : 1
+                            opacity : Bluetooth.defaultAdapter.enabled ? 0 : btn1.containsMouse ? 1 : 0.7
                             Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
-                        MouseArea { id: btn1; anchors.fill: parent; hoverEnabled: true; onClicked: if(Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.enabled = !Bluetooth.defaultAdapter.enabled }
+                        MouseArea { id: btn1; anchors.fill: parent; cursorShape : Qt.PointingHandCursor; hoverEnabled: true; onClicked: if(Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.enabled = !Bluetooth.defaultAdapter.enabled }
                     }
 
                     Rectangle {
-                        width: 50; height: 50; color: btn2.containsMouse ? "#313244" : "transparent"; radius: 5
+                        width: 50; height: 50; color: "transparent"; radius: 5
                         Image { anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/bluetooth/black-hole.svg"
-                            opacity : Bluetooth.defaultAdapter?.discoverable ? 1 : 0
+                            opacity : Bluetooth.defaultAdapter.discoverable ? 0 : btn2.containsMouse ? 1 : 0.7
                             Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
                         Image { anchors.centerIn: parent; width: 28; height: 28; fillMode: Image.PreserveAspectFit; smooth : true; mipmap : true; antialiasing: true;
                             source: "svgs/bluetooth/incognito.svg"
-                            opacity : Bluetooth.defaultAdapter?.discoverable ? 0 : 1
+                            opacity : Bluetooth.defaultAdapter.discoverable ? btn2.containsMouse ? 1 : 0.7 : 0
                             Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
-                        MouseArea { id: btn2; anchors.fill: parent; hoverEnabled: true; onClicked: if(Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.discoverable = !Bluetooth.defaultAdapter.discoverable }
+                        MouseArea { id: btn2; anchors.fill: parent; cursorShape : Qt.PointingHandCursor; hoverEnabled: true; onClicked: if(Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.discoverable = !Bluetooth.defaultAdapter.discoverable }
                     }
 
                     Rectangle {
-                        width: 50; height: 50; color: btn3.containsMouse ? "#313244" : "transparent"; radius: 5
-                        Image { anchors.centerIn: parent; width: 24; height: 24; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/send.svg" }
+                        width: 50; height: 50; color: "transparent"; radius: 5
+                        Image { anchors.centerIn: parent; width: 24; height: 24; opacity : btn3.containsMouse ? 1 : 0.7; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/send.svg" 
+                        Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
                         MouseArea { 
-                            id: btn3; anchors.fill: parent; hoverEnabled: true; 
+                            id: btn3; anchors.fill: parent; hoverEnabled: true; cursorShape : Qt.PointingHandCursor; 
                             onClicked: { osCommand.cmd = "blueman-sendto"; osCommand.running = true; myPopup.toggle() } 
                         }
                     }
@@ -119,21 +130,24 @@ Item {
                     spacing: 30
                 
                     Rectangle {
-                        width: 50; height: 50; color: btn5.containsMouse ? "#313244" : "transparent"; radius: 5; anchors.leftMargin: 20
-                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/galaxy-spiral-shape.svg" }
-                        MouseArea { id: btn5; anchors.fill: parent; hoverEnabled: true; onClicked: { osCommand.cmd = "blueman-manager"; osCommand.running = true; myPopup.toggle() } }
+                        width: 50; height: 50; color: "transparent"; radius: 5; anchors.leftMargin: 20
+                        Image { anchors.centerIn: parent; width: 28; height: 28; opacity : btn5.containsMouse ? 1 : 0.7; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/galaxy-spiral-shape.svg" 
+                        Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
+                        MouseArea { id: btn5; anchors.fill: parent; cursorShape : Qt.PointingHandCursor; hoverEnabled: true; onClicked: { osCommand.cmd = "blueman-manager"; osCommand.running = true; myPopup.toggle() } }
                     }
 
                     Rectangle {
-                        width: 50; height: 50; color: btn6.containsMouse ? "#313244" : "transparent"; radius: 5
-                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/cpu.svg" }
-                        MouseArea { id: btn6; anchors.fill: parent; hoverEnabled: true; onClicked: { osCommand.cmd = "blueman-adapters"; osCommand.running = true; myPopup.toggle() } }
+                        width: 50; height: 50; color: "transparent"; radius: 5
+                        Image { anchors.centerIn: parent; width: 28; height: 28; opacity : btn6.containsMouse ? 1 : 0.7; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/cpu.svg" 
+                        Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
+                        MouseArea { id: btn6; anchors.fill: parent; cursorShape : Qt.PointingHandCursor; hoverEnabled: true; onClicked: { osCommand.cmd = "blueman-adapters"; osCommand.running = true; myPopup.toggle() } }
                     }
 
                     Rectangle {
-                        width: 50; height: 50; color: btn7.containsMouse ? "#313244" : "transparent"; radius: 5
-                        Image { anchors.centerIn: parent; width: 28; height: 28; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/background.svg" }
-                        MouseArea { id: btn7; anchors.fill: parent; hoverEnabled: true; onClicked: { osCommand.cmd = "blueman-services"; osCommand.running = true; myPopup.toggle() } }
+                        width: 50; height: 50; color: "transparent"; radius: 5
+                        Image { anchors.centerIn: parent; width: 28; height: 28; opacity : btn7.containsMouse ? 1 : 0.7; smooth : true; mipmap : true; antialiasing: true; fillMode: Image.PreserveAspectFit; source: "svgs/bluetooth/background.svg" 
+                        Behavior on opacity{ NumberAnimation { duration : 150; easing.type : Easing.OutQuad}}}
+                        MouseArea { id: btn7; anchors.fill: parent; cursorShape : Qt.PointingHandCursor; hoverEnabled: true; onClicked: { osCommand.cmd = "blueman-services"; osCommand.running = true; myPopup.toggle() } }
                     }
                 }
 
@@ -143,13 +157,13 @@ Item {
                         values: Bluetooth.devices ? [...Bluetooth.devices.values].filter(d => d.paired) : []
                     }
                     delegate: Rectangle {
-                        width: parent.width; height: 40; color: pBtn.containsMouse ? "#313244" : "transparent"; radius: 5
+                        width: parent.width; height: 40; color: "transparent"; radius: 5
                         Row {
                             anchors.verticalCenter: parent.verticalCenter; anchors.left: parent.left; anchors.leftMargin: 10; spacing: 10
                             IconImage { source: Quickshell.iconPath(modelData.icon); width: 20; height: 20 }
                             Text { text: modelData.name !== "" ? modelData.name : modelData.deviceName; color: modelData.connected ? "#a6e3a1" : "white" }
                         }
-                        MouseArea { id: pBtn; anchors.fill: parent; hoverEnabled: true; onClicked: modelData.connected ? modelData.disconnect() : modelData.connect() }
+                        MouseArea { id: pBtn; anchors.fill: parent; cursorShape : Qt.PointingHandCursor; hoverEnabled: true; onClicked: modelData.connected ? modelData.disconnect() : modelData.connect() }
                     }
                 }
 
