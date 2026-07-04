@@ -113,6 +113,7 @@ Item{
                                 wrapMode: Text.WordWrap
                                 text : modelData.summary
                                 Layout.fillWidth : true
+                                font.family: "Orbitron"
                             }
                             Text{
                                 color : "#FFFFFF"
@@ -121,6 +122,7 @@ Item{
                                 text : modelData.body
                                 font.bold : false
                                 Layout.fillWidth : true
+                                font.family: "Share Tech Mono"
                             }
                         }
                     }
