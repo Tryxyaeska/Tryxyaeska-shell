@@ -120,7 +120,7 @@ Item{
                                 wrapMode: Text.WordWrap
                                 font.pixelSize : 14
                                 text : modelData.body
-                                font.bold : false
+                                font.bold : true
                                 Layout.fillWidth : true
                                 font.family: "Share Tech Mono"
                             }
