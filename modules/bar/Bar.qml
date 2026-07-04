@@ -109,14 +109,4 @@ PanelWindow{
             }
         }
     }
-
-    Rectangle{
-        id : notifAnchor
-        height : parent.height
-        width : 10
-        anchors.right : parent.right
-        anchors.top : parent.top
-        color : "transparent"
-        Notif{}
-    }
 }
