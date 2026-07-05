@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import QtQuick.Effects
+import "../../.."
 
 Item {
     id: root
@@ -76,7 +77,7 @@ Item {
             height: root.isOpen ? root.popupHeight : 0
             opacity: root.isOpen ? 1 : 0
             
-            color: '#1e1e2e' 
+            color: Colors.popupCol
             radius: 8
             clip: true 
             border.width: 1

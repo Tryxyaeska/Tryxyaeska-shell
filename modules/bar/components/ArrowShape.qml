@@ -1,24 +1,25 @@
 import QtQuick
 import QtQuick.Shapes
+import "../../.."
 
 Item {
     id: root
     width: parent.width
     height: parent.height
 
-    property color boxColor: '#5e2e0e'
+    property color boxColor: Colors.arrowshapeCol
     property int arrowDepth: 12 
 
     property int border: 1
-    property color borderColor: "#FFFFFF"
+    property color borderColor: Colors.arrowborderCol
 
     property bool borderTop: false
     property bool borderBottom: false
     property bool borderLeft: false
     property bool borderRight: false
 
-    property int arrowLeft: -1  
-    property int arrowRight: 1  
+    property int arrowLeft: -1 
+    property int arrowRight: 1 
 
     default property alias innerContent: container.data
 

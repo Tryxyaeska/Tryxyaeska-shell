@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.SystemTray
+import "../../.."
 
 ArrowShape{
     height: parent.height

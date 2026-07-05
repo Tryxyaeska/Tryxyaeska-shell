@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import "components"
 import "notifications"
+import "../.."
 
 PanelWindow{
     id: statusBar
@@ -13,7 +14,7 @@ PanelWindow{
     }
 
     implicitHeight: 30
-    color : '#1e1e2e'
+    color : Colors.barBg
 
     
     Rectangle {

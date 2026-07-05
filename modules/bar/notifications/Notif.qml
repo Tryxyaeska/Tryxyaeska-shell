@@ -4,6 +4,7 @@ import Quickshell.Services.Notifications
 import Quickshell.Wayland
 import QtQuick.Layouts
 import QtQuick.Effects
+import "../../.."
 
 Item{
     id : notifMainAnchor

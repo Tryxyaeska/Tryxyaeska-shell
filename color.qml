@@ -3,20 +3,20 @@ import QtQuick
 
 QtObject{
     //COLORS COZ YUP  
-    property color BarBg: "sus"
-    property color BarBorder: "sus"
+    property color barBg: '#2a241e'
+    property color barBorder: '#000000'
 
    //Arrowshape
-    property color BorderCol: "sus"
-    property color ArrowShapeCol: "sus"
+    property color arrowborderCol: '#000000'
+    property color arrowshapeCol: '#5e2e0e'
 
-   //Wrkspace
-    property color WorkspaceDotCol: "sus"
+   //Workspace
+    property color workspacedotCol: '#000000'
 
-    property color PopupCol: "sus"
+    property color popupCol: '#000000'
 
     //FONT STYLE COZ YUP
-    property color FontCol: "sus"
-    property string FontFamily: "sus"
-    property int FontSize: 69
+    property color fontCol: '#075bf6'
+    property string fontFamily: ""
+    property int fontSize: 69
 }

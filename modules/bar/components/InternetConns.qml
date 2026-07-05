@@ -4,6 +4,7 @@ import Quickshell.Networking
 import Quickshell.Widgets
 import Quickshell.Io
 import Quickshell.Services.SystemTray
+import "../../.."
 
 Item {
     height: 30

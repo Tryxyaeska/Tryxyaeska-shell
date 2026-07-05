@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.UPower
+import "../../.."
 
 ArrowShape{
     width : 120

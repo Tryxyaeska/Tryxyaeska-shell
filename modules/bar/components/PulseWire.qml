@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import Quickshell.Io
 import Quickshell.Services.Pipewire
+import "../../.."
 
 ArrowShape{
     id : pulseMain
@@ -65,14 +66,14 @@ ArrowShape{
                 anchors.verticalCenter : parent.verticalCenter
                 font.pixelSize : 14
                 font.bold : true
-                color : "#FFFFFF"
+                color : Colors.fontCol
                 text : Math.round(currAudioSinkVolume * 100) + "%"   
             }
             Text{
                 anchors.verticalCenter : parent.verticalCenter
                 font.pixelSize : 14
                 font.bold : true
-                color : "#FFFFFF"
+                color : Colors.fontCol
                 text : if(volumeDb > 0){
                     "+" + volumeDb + "dB"
                     }else if(volumeDb < 0 && volumeDb !="-Inf"){

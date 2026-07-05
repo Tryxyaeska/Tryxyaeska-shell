@@ -3,6 +3,7 @@ import QtQuick
 import Quickshell.Bluetooth
 import Quickshell.Widgets
 import Quickshell.Io
+import "../../.."
 
 Item {
     height: 30
