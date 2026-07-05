@@ -31,8 +31,7 @@ ArrowShape{
             text: {
                 if(spotifyMpris.length > 0) {
                     spotifyMpris[0].trackTitle + " - " + spotifyMpris[0].trackArtist
-                }else if (sources.length > 0) {
-                    
+                }else if (sources.length > 0 && sources[0].trackTitle.length != 0) {
                     sources[0].trackTitle + " - " + sources[0].trackArtist
                 }else{
                     "MPRIS - Offline"
