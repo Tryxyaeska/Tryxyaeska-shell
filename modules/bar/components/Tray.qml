@@ -74,6 +74,16 @@ ArrowShape{
                     popupHeight : mainRoot.children.values.filter(x => !x.isSeparator).length * 35 + 15
                     property int openSubmenuCount: 0
                     menuGap : -8
+                    src : "/mnt/data/Utility OG/Pictures/download (59).jpeg"
+                    blurEnabled : true
+                    blur : 0.6
+                    blurMax : 8
+                    contrast : 0.666
+                    saturation : 0.13
+                    imgOpac : 0.6
+                    brightness : 0.0
+                    colorization : 0.4
+                    colorizationColor : '#1e1e2e'
 
                     QsMenuOpener{
                         id: mainRoot
@@ -113,7 +123,7 @@ ArrowShape{
 
                                 Text{
                                     font.pixelSize: 14
-                                    color: "white"
+                                    color: btn1.containsMouse ? "white" : "#a6adc8"
                                     text: modelData.text
                                     anchors.verticalCenter: parent.verticalCenter
                                     anchors.left: parent.left
@@ -122,6 +132,7 @@ ArrowShape{
                                     horizontalAlignment: Text.AlignLeft
                                     elide: Text.ElideRight
                                     font.bold: true
+                                    Behavior on color {ColorAnimation{ duration: 150 }}
                                 }
 
                                 HoverHandler{
@@ -140,6 +151,7 @@ ArrowShape{
                                 }
 
                                 MouseArea{
+                                    id : btn1
                                     anchors.fill: parent
                                     hoverEnabled: true 
                                     cursorShape: Qt.PointingHandCursor 
@@ -160,6 +172,16 @@ ArrowShape{
                                     popupAnchorEdges: Edges.Left | Edges.Top
                                     popupAnchorGravity: Edges.Left | Edges.Bottom
                                     animatesLeft: true
+                                    src : "/mnt/data/Utility OG/Pictures/download (55).jpeg"
+                                    blurEnabled : true
+                                    blur : 0.6
+                                    blurMax : 8
+                                    contrast : 0.666
+                                    saturation : 0.13
+                                    imgOpac : 0.6
+                                    brightness : 0.0
+                                    colorization : 0.4
+                                    colorizationColor : '#1e1e2e'
 
                                     onIsOpenChanged:{
                                         if(isOpen){
@@ -206,7 +228,7 @@ ArrowShape{
                                                 
                                                 Text{
                                                     font.pixelSize: 14
-                                                    color: "white"
+                                                    color: btn2.containsMouse ? "white" : "#a6adc8"
                                                     text: modelData.text
                                                     anchors.verticalCenter: parent.verticalCenter
                                                     anchors.left: parent.left
@@ -215,9 +237,11 @@ ArrowShape{
                                                     horizontalAlignment: Text.AlignLeft
                                                     elide: Text.ElideRight
                                                     font.bold: true
+                                                    Behavior on color {ColorAnimation{ duration: 150 }}
                                                 }
                                                 
                                                 MouseArea{
+                                                    id : btn2
                                                     anchors.fill: parent
                                                     hoverEnabled: true 
                                                     cursorShape: Qt.PointingHandCursor 
