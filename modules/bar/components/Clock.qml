@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import"../../.."
 
 ArrowShape{
     height: parent.height
@@ -14,9 +15,10 @@ ArrowShape{
         anchors.horizontalCenter : parent.horizontalCenter
         id : clkText
         text: Qt.formatDateTime(clock.date, "dd-MM-yyyy | hh:mm ")
-        color: '#FFFFFF'
+        color: Theme.clocktextCol
+        font.family: Theme.clkFont
         font.bold: true
-        font.pixelSize : 14
+        font.pixelSize : Theme.clockfontsize
         anchors.leftMargin: 10
     }
 }

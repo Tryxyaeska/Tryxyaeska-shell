@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.UPower
+import "../../.."
 
 ArrowShape{
     width : 120
@@ -9,7 +10,7 @@ ArrowShape{
 
     Row{
         anchors.centerIn : parent
-        spacing : 4
+        spacing : 5
         Image{
             width : 21
             height : 21
@@ -32,9 +33,10 @@ ArrowShape{
         }
 
         Text{
-            font.pixelSize : 14
+            font.pixelSize : Theme.batfontsize
             font.bold : true
-            color : "white"
+            font.family: Theme.batfontfamily
+            color : Theme.battextCol
             text: (UPower.displayDevice.percentage*100).toFixed(0) + "%"
             anchors.verticalCenter : parent.verticalCenter
         }

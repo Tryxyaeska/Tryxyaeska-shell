@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import Quickshell.Io
 import "ArrowShape"
+import "../../.."
 
 ArrowShape { 
     id: root
@@ -84,16 +85,18 @@ ArrowShape {
 
         Text {
             text: root.usageText
-            font.pixelSize: 14
+            font.pixelSize: Theme.cpuUsagefontsize
             font.bold: true
-            color: "#FFFFFF"
+            color: Theme.cpuUsagetextCol
+            font.family: Theme.cpuFont
         }
 
         Text {
             text: root.tempText
-            font.pixelSize: 14
+            font.pixelSize: Theme.cpuTempfontsize
             font.bold: true
-            color: "#FFFFFF"
+            color: Theme.cpuTemptextcol
+            font.family: Theme.cpuFont
         }
     }
 }

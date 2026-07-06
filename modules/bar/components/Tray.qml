@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.SystemTray
+import "../../.."
 
 ArrowShape{
     height: parent.height
@@ -21,7 +22,7 @@ ArrowShape{
 
     Row{
         anchors.centerIn : parent
-        spacing: 12 
+        spacing: 12
         height : parent.height
         Repeater{
             model : SystemTray.items.values.filter(x => !["Network", "blueman"].includes(x.title))
@@ -74,16 +75,16 @@ ArrowShape{
                     popupHeight : mainRoot.children.values.filter(x => !x.isSeparator).length * 35 + 15
                     property int openSubmenuCount: 0
                     menuGap : -8
-                    src : "/mnt/data/Utility OG/Pictures/download (59).jpeg"
-                    blurEnabled : true
-                    blur : 0.6
-                    blurMax : 8
-                    contrast : 0.666
-                    saturation : 0.13
-                    imgOpac : 0.6
-                    brightness : 0.0
-                    colorization : 0.4
-                    colorizationColor : '#1e1e2e'
+                    src : Theme.traypopupbackground
+                    blurEnabled : Theme.trayblurEnabled
+                    blur : Theme.trayblur
+                    blurMax : Theme.trayblurmax
+                    contrast : Theme.traycontrast
+                    saturation : Theme.traysaturation
+                    imgOpac : Theme.trayimageopacity
+                    brightness : Theme.traybrightness
+                    colorization : Theme.traycolorization
+                    colorizationColor : Theme.colorizationColor
 
                     QsMenuOpener{
                         id: mainRoot
@@ -122,8 +123,9 @@ ArrowShape{
                                 property bool hasSubmenu: modelData.hasChildren
 
                                 Text{
-                                    font.pixelSize: 14
-                                    color: btn1.containsMouse ? "white" : "#a6adc8"
+                                    font.pixelSize: Theme.trayFontSize
+                                    font.family: Theme.trayFont
+                                    color: btn1.containsMouse ? "white" : Theme.traypopuptextCol
                                     text: modelData.text
                                     anchors.verticalCenter: parent.verticalCenter
                                     anchors.left: parent.left
@@ -172,16 +174,16 @@ ArrowShape{
                                     popupAnchorEdges: Edges.Left | Edges.Top
                                     popupAnchorGravity: Edges.Left | Edges.Bottom
                                     animatesLeft: true
-                                    src : "/mnt/data/Utility OG/Pictures/download (55).jpeg"
-                                    blurEnabled : true
-                                    blur : 0.6
-                                    blurMax : 8
-                                    contrast : 0.666
-                                    saturation : 0.13
-                                    imgOpac : 0.6
-                                    brightness : 0.0
-                                    colorization : 0.4
-                                    colorizationColor : '#1e1e2e'
+                                    src : Theme.trayCpopupbackground
+                                    blurEnabled : Theme.trayCblurEnabled
+                                    blur : Theme.trayCblur
+                                    blurMax : Theme.trayCblurmax
+                                    contrast : Theme.trayCcolorization
+                                    saturation : Theme.trayCsaturation
+                                    imgOpac : Theme.trayCimageopacity
+                                    brightness : Theme.trayCbrightness
+                                    colorization : Theme.trayCcolorization
+                                    colorizationColor : Theme.trayCcolorizationCol
 
                                     onIsOpenChanged:{
                                         if(isOpen){
@@ -227,8 +229,9 @@ ArrowShape{
                                                 color: "transparent"
                                                 
                                                 Text{
-                                                    font.pixelSize: 14
-                                                    color: btn2.containsMouse ? "white" : "#a6adc8"
+                                                    font.pixelSize: Theme.trayCFontSize
+                                                    font.family: Theme.trayFont
+                                                    color: btn2.containsMouse ? "white" : Theme.trayCpopuptextCol
                                                     text: modelData.text
                                                     anchors.verticalCenter: parent.verticalCenter
                                                     anchors.left: parent.left

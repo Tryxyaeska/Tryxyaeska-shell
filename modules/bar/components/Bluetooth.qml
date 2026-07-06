@@ -3,6 +3,7 @@ import QtQuick
 import Quickshell.Bluetooth
 import Quickshell.Widgets
 import Quickshell.Io
+import "../../.."
 
 Item {
     height: 30
@@ -59,18 +60,18 @@ Item {
         anchorItem: mainButton
         parentWindow: statusBar
         popupWidth: 250
-        popupHeight: 220 
+        popupHeight: 220
         menuGap : -2
-        anmtSrc : "/mnt/data/Utility OG/Pictures/download.gif"
-        blurEnabled : true
-        blur : 0.6
-        blurMax : 8
-        contrast : 0.333
-        saturation : 0.3
-        imgOpac : 0.3
-        brightness : 0.0
-        colorization : 0.344
-        colorizationColor : '#1e1e2e'
+        anmtSrc : Theme.btpopupbackground
+        blurEnabled : Theme.btblurEnabled
+        blur : Theme.btblur
+        blurMax : Theme.btblurmax
+        contrast : Theme.btcontrast
+        saturation : Theme.btsaturation
+        imgOpac : Theme.btimageopacity
+        brightness : Theme.btbrightness
+        colorization : Theme.btcolorization
+        colorizationColor : Theme.btcolorizationCol
 
         Flickable {
             anchors.fill: parent
@@ -151,7 +152,7 @@ Item {
                     }
                 }
 
-                Text { text: "Reconnect to..."; color: "#a6adc8"; font.pixelSize: 14; font.bold: true; padding: 5 }
+                Text { text: "Reconnect to..."; color: "#a6adc8"; font.pixelSize: 14; font.bold: true; font.family: Theme.btFont; padding: 5 }
                 Repeater {
                     model: ScriptModel {
                         values: Bluetooth.devices ? [...Bluetooth.devices.values].filter(d => d.paired) : []
@@ -169,7 +170,7 @@ Item {
 
                 Rectangle {
                     width: parent.width; height: 35; color: "transparent"; radius: 5;
-                    Text { anchors.verticalCenter: parent; font.pixelSize: 14; font.bold: true; padding: 5;color: Bluetooth.defaultAdapter?.discovering ? "#89b4fa" : btn4.containsMouse ? "white" : "#a6adc8"; text: Bluetooth.defaultAdapter?.discovering ? "Scanning..." : "Available Connections"; Behavior on color{ColorAnimation { duration: 150; easing.type: Easing.OutQuad}}}
+                    Text { anchors.verticalCenter: parent; font.pixelSize: 14; font.bold: true; font.family: Theme.btFont; padding: 5;color: Bluetooth.defaultAdapter?.discovering ? "#89b4fa" : btn4.containsMouse ? "white" : "#a6adc8"; text: Bluetooth.defaultAdapter?.discovering ? "Scanning..." : "Available Connections"; Behavior on color{ColorAnimation { duration: 150; easing.type: Easing.OutQuad}}}
                     MouseArea { id: btn4; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: if(Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.discovering = !Bluetooth.defaultAdapter.discovering }
                 }
 

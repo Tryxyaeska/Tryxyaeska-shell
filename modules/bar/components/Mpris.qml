@@ -1,6 +1,7 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.Mpris
+import "../../.."
 
 ArrowShape{
     id : pulseMain
@@ -24,9 +25,10 @@ ArrowShape{
             anchors.verticalCenter: parent.verticalCenter
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 14
+            font.pixelSize: Theme.mprisFontsize
             font.bold: true
-            color: "#FFFFFF"
+            font.family: Theme.mprisFont
+            color: Theme.mprisfontCol
             text: {
                 if(spotifyMpris.length > 0) {
                     spotifyMpris[0].trackTitle + " - " + spotifyMpris[0].trackArtist
