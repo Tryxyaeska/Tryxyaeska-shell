@@ -189,7 +189,7 @@ Item{
         }
 
         implicitWidth : centerVisibility ? 350 : 0
-        implicitHeight : centerVisibility ? Math.max(1, centerCol.implicitHeight + 15) : 0
+        implicitHeight : centerVisibility ? Math.min(806, centerCol.implicitHeight + 15) : 0
         Behavior on implicitWidth {NumberAnimation {duration: 50; easing.type: Easing.InOutBack}}
         Behavior on implicitHeight {NumberAnimation {duration: 50; easing.type: Easing.InOutBack}}
         color : "black"
@@ -296,7 +296,7 @@ Item{
                     font.family : "Share Tech Mono"
                     height : 36
                 }
-
+                
                 ListView{
                     id : notifCenterList
                     anchors.left : parent.left
@@ -399,6 +399,14 @@ Item{
                                 }
                             }
                         }
+
+                        Timer{
+                            id : centerAutoDismisser
+                            interval : 3600000
+                            running : true
+                            onTriggered : notifCenterDb.remove(index)
+                        }
+
                         MouseArea{
                             id : hoverScanner2
                             anchors.fill : parent
