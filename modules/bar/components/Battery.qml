@@ -35,6 +35,7 @@ ArrowShape{
         Text{
             font.pixelSize : Theme.batfontsize
             font.bold : true
+            font.family: Theme.batfontfamily
             color : Theme.battextCol
             text: (UPower.displayDevice.percentage*100).toFixed(0) + "%"
             anchors.verticalCenter : parent.verticalCenter

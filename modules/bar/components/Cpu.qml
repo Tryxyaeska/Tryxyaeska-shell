@@ -88,6 +88,7 @@ ArrowShape {
             font.pixelSize: Theme.cpuUsagefontsize
             font.bold: true
             color: Theme.cpuUsagetextCol
+            font.family: Theme.cpuFont
         }
 
         Text {
@@ -95,6 +96,7 @@ ArrowShape {
             font.pixelSize: Theme.cpuTempfontsize
             font.bold: true
             color: Theme.cpuTemptextcol
+            font.family: Theme.cpuFont
         }
     }
 }

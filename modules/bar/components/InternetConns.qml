@@ -251,8 +251,9 @@ Item {
                             anchors.verticalCenter: parent.verticalCenter 
                             anchors.left: parent.left
                             anchors.leftMargin: 5
-                            font.pixelSize: 14
-                            font.bold: true
+                            font.pixelSize: 14 
+                            font.bold: true 
+                            font.family: Theme.intFont
                             color: "#a6adc8"
                             text: "Wired/ Ethernet Networks:"
                         }
@@ -285,6 +286,7 @@ Item {
                                     text: modelData.name 
                                     font.pixelSize: 14
                                     font.bold: true
+                                    font.family: Theme.intFont
                                     color: modelData.connected ? '#57c84f' : '#8b8b8b' 
                                 }
                             }
@@ -311,13 +313,13 @@ Item {
 
                 Rectangle {
                     width: parent.width; height: 24; color: "transparent"; radius: 5;
-                    Text { anchors.verticalCenter: parent.verticalCenter; font.pixelSize: 18; font.bold: true; padding: 5; color: "white"; text: "Wi-Fi"; }
+                    Text { anchors.verticalCenter: parent.verticalCenter; font.pixelSize: 18; font.bold: true; font.family:Theme.intFont; padding: 5; color: "white"; text: "Wi-Fi"; }
                 }
 
                 //Currently Connected Header
                 Rectangle {
                     width: parent.width; height: 30; color: "transparent"; radius: 5;
-                    Text { anchors.verticalCenter: parent.verticalCenter; font.pixelSize: 14; font.bold: true; padding: 5; color: "#a6adc8"; text: "Current"; }
+                    Text { anchors.verticalCenter: parent.verticalCenter; font.pixelSize: 14; font.bold: true; font.family: Theme.intFont; padding: 5; color: "#a6adc8"; text: "Current"; }
                 }
 
                 //Active Connected Wi-Fi Network
@@ -325,7 +327,7 @@ Item {
                     width: parent.width; height: 35; color: "transparent"; radius: 5;
                     
                     Text { 
-                        anchors.verticalCenter: parent.verticalCenter; font.pixelSize: 14; font.bold: true; padding: 5; color: "#f38ba8";
+                        anchors.verticalCenter: parent.verticalCenter; font.pixelSize: 14; font.bold: true; font.family: Theme.intFont; padding: 5; color: "#f38ba8";
                         text: "Disconnected"
                         visible: connectedRepeater.count === 0
                     }
@@ -348,7 +350,7 @@ Item {
                                 }
                                 Text { 
                                     text: modelData.name ? modelData.name : "Connected"
-                                    font.pixelSize: 14; font.bold: true; color: "#a6e3a1"; anchors.verticalCenter: parent.verticalCenter 
+                                    font.pixelSize: 14; font.bold: true;font.family: Theme.intFont; color: "#a6e3a1"; anchors.verticalCenter: parent.verticalCenter 
                                 }
                             }
                         }
@@ -373,7 +375,7 @@ Item {
                     
                     Text { 
                         anchors.verticalCenter: parent.verticalCenter; anchors.left: parent.left; anchors.leftMargin: 5;
-                        font.pixelSize: 14; font.bold: true; 
+                        font.pixelSize: 14; font.bold: true; font.family: Theme.intFont; 
                         color: scanMouse.containsMouse ? "#FFFFFF" : "#a6adc8"; 
                         text: scanContainer.isScanning ? "Available Networks (SCNG)" : "Available Networks (RSCN)"
                         Behavior on color { ColorAnimation { duration: 150 } }
@@ -457,7 +459,7 @@ Item {
                                         }
                                     }
                                     Text {
-                                        font.pixelSize: 14; font.bold: false; color: avlNetworkMouse.containsMouse ? "#FFFFFF" : "#a6adc8"; anchors.verticalCenter: parent.verticalCenter 
+                                        font.pixelSize: 14; font.bold: false;font.family: Theme.intFont; color: avlNetworkMouse.containsMouse ? "#FFFFFF" : "#a6adc8"; anchors.verticalCenter: parent.verticalCenter 
                                         text: modelData.text
                                         Behavior on color {ColorAnimation{ duration: 150 }}
                                     }

@@ -123,7 +123,8 @@ ArrowShape{
                                 property bool hasSubmenu: modelData.hasChildren
 
                                 Text{
-                                    font.pixelSize: 14
+                                    font.pixelSize: Theme.trayFontSize
+                                    font.family: Theme.trayFont
                                     color: btn1.containsMouse ? "white" : Theme.traypopuptextCol
                                     text: modelData.text
                                     anchors.verticalCenter: parent.verticalCenter
@@ -228,7 +229,8 @@ ArrowShape{
                                                 color: "transparent"
                                                 
                                                 Text{
-                                                    font.pixelSize: 14
+                                                    font.pixelSize: Theme.trayCFontSize
+                                                    font.family: Theme.trayFont
                                                     color: btn2.containsMouse ? "white" : Theme.trayCpopuptextCol
                                                     text: modelData.text
                                                     anchors.verticalCenter: parent.verticalCenter

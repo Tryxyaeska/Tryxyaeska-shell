@@ -25,8 +25,9 @@ ArrowShape{
             anchors.verticalCenter: parent.verticalCenter
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 14
+            font.pixelSize: Theme.mprisFontsize
             font.bold: true
+            font.family: Theme.mprisFont
             color: Theme.mprisfontCol
             text: {
                 if(spotifyMpris.length > 0) {

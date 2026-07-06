@@ -65,6 +65,7 @@ ArrowShape{
             Text{
                 anchors.verticalCenter : parent.verticalCenter
                 font.pixelSize : Theme.pulseVolfontsize
+                font.family: Theme.pulseFont
                 font.bold : true
                 color : Theme.pulseVolfontCol
                 text : Math.round(currAudioSinkVolume * 100) + "%"   
@@ -72,6 +73,7 @@ ArrowShape{
             Text{
                 anchors.verticalCenter : parent.verticalCenter
                 font.pixelSize : Theme.pulseDBfontsize
+                font.family: Theme.pulseDBFont
                 font.bold : true
                 color : Theme.pulseDBfontCol
                 text : if(volumeDb > 0){

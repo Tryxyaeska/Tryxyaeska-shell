@@ -152,7 +152,7 @@ Item {
                     }
                 }
 
-                Text { text: "Reconnect to..."; color: "#a6adc8"; font.pixelSize: 14; font.bold: true; padding: 5 }
+                Text { text: "Reconnect to..."; color: "#a6adc8"; font.pixelSize: 14; font.bold: true; font.family: Theme.btFont; padding: 5 }
                 Repeater {
                     model: ScriptModel {
                         values: Bluetooth.devices ? [...Bluetooth.devices.values].filter(d => d.paired) : []
@@ -170,7 +170,7 @@ Item {
 
                 Rectangle {
                     width: parent.width; height: 35; color: "transparent"; radius: 5;
-                    Text { anchors.verticalCenter: parent; font.pixelSize: 14; font.bold: true; padding: 5;color: Bluetooth.defaultAdapter?.discovering ? "#89b4fa" : btn4.containsMouse ? "white" : "#a6adc8"; text: Bluetooth.defaultAdapter?.discovering ? "Scanning..." : "Available Connections"; Behavior on color{ColorAnimation { duration: 150; easing.type: Easing.OutQuad}}}
+                    Text { anchors.verticalCenter: parent; font.pixelSize: 14; font.bold: true; font.family: Theme.btFont; padding: 5;color: Bluetooth.defaultAdapter?.discovering ? "#89b4fa" : btn4.containsMouse ? "white" : "#a6adc8"; text: Bluetooth.defaultAdapter?.discovering ? "Scanning..." : "Available Connections"; Behavior on color{ColorAnimation { duration: 150; easing.type: Easing.OutQuad}}}
                     MouseArea { id: btn4; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: if(Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.discovering = !Bluetooth.defaultAdapter.discovering }
                 }
 

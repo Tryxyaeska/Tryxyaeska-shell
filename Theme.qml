@@ -4,7 +4,7 @@ import QtQuick
 QtObject{
 
     //Bar
-    property color barBg:'#2a241e'
+    property color barBg:'#1B1311'
     property color barBorder:'#000000'
 
 
@@ -17,7 +17,7 @@ QtObject{
 
    //Arrowshape
     property color arrowborderCol:'#000000'
-    property color arrowshapeCol:'#5e2e0e'
+    property color arrowshapeCol:'#5f0c06'
     
 
 
@@ -30,9 +30,10 @@ QtObject{
     property int batspacing: 5        //removed
     property int batimgwidth: 21      //removed
     property int batimgheight: 21     //removed
-    property int batfontsize: 14
     property string batfontfamily: ""
     property color battextCol: '#ffffff'
+    property string batFont: fontFamily
+    property int batfontsize: 14
 
 
 
@@ -47,16 +48,18 @@ QtObject{
     property int btpopupwidth: 250     //removed
     property int btpopupheight: 220    //removed
     property int btmenugap: -2         //removed
-    property url btpopupbackground:  Qt.resolvedUrl("/home/origin/Downloads/wp4918390-steinsgate-0-wallpapers.jpg")
+    property url btpopupbackground:  Qt.resolvedUrl("/home/origin/Downloads/p6.jpg")
     property bool btblurEnabled: true
     property double btblur: 0.6
-    property double btblurmax: 8
-    property double btcontrast: 0.33
-    property double btsaturation: 0.3
-    property double btimageopacity: 0.3
-    property double btbrightness: 0.0
-    property double btcolorization: 0.344
-    property color btcolorizationCol: '#000000'
+    property double btblurmax: 10
+    property double btcontrast: 0.5
+    property double btsaturation: 0.7
+    property double btimageopacity: 0.5
+    property double btbrightness: 0.1
+    property double btcolorization: 0.46
+    property color btcolorizationCol: '#450d03'
+    property string btFont: fontFamily
+    property int btfontsize: 14
 
 
 
@@ -65,6 +68,7 @@ QtObject{
     //Clock
     property color clocktextCol: '#fdfdfd'
     property int clockfontsize: 14
+    property string clkFont: fontFamily
 
 
 
@@ -78,6 +82,7 @@ QtObject{
     property int cpuUsagefontsize: 14
     property color cpuTemptextcol: '#ffffff' //Temperature
     property int cpuTempfontsize: 14
+    property string cpuFont: fontFamily
 
 
 
@@ -102,12 +107,16 @@ QtObject{
     property double intbrightness: 0.3
     property double intcolorization: 0.46
     property color intcolorizationCol: '#5e2e0e'
+    property string intFont: fontFamily
+    
 
 
 
 
     //Mpris
-    property color mprisfontCol: '#ffffff'
+    property color mprisfontCol: '#fefefe'
+    property string mprisFont: fontFamily
+    property int mprisFontsize: 16
 
 
 
@@ -118,9 +127,11 @@ QtObject{
     //Volume
     property int pulseVolfontsize: 14
     property color pulseVolfontCol: '#ffffff'
+    property string pulseFont: fontFamily
     //Volume Db
     property int pulseDBfontsize: 14
     property color pulseDBfontCol: '#ffffff'
+    property string pulseDBFont: fontFamily
 
 
 
@@ -144,6 +155,8 @@ QtObject{
     property double traybrightness: 0.0
     property double traycolorization: 0.4
     property color traycolorizationCol: '#5e2e0e'
+    property string trayFont: fontFamily
+    property int trayFontSize: 16
     //Tray ChildPopup
     property color trayCpopuptextCol: '#a6adc8'
     property int trayCmenugap: -12        //removed
@@ -157,6 +170,8 @@ QtObject{
     property double trayCbrightness: 0.0
     property double trayCcolorization: 0.4
     property color trayCcolorizationCol: '#5e2e0e'
+    property string trayCFont: fontFamily
+    property int trayCFontSize: 16
 
 
 
@@ -169,6 +184,6 @@ QtObject{
 
     //FONT STYLE COZ YUP(NO WORK HAS BEEN DONE ON THIS)
     property color fontCol: '#ffffff'
-    property string fontFamily: ""
-    property int fontSize: 69
+    property string fontFamily: "Iosevka Nerd Font"
+    property int fontSize: 14
 }
