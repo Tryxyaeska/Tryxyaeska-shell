@@ -37,7 +37,7 @@ ArrowShape{
             
             delegate: Rectangle {
                 
-                width: modelData.active? 34 : 14
+                width: modelData.active? 33 : 13
                 height: parent.height
                 color : "transparent"
                 anchors.verticalCenter: parent.verticalCenter
@@ -62,7 +62,7 @@ ArrowShape{
 
                 Rectangle{
                     width : parent.width
-                    height : 14
+                    height : 13
                     anchors.centerIn : parent.centerIn
                     anchors.verticalCenter : parent.verticalCenter
 
@@ -71,7 +71,7 @@ ArrowShape{
                         anchors.centerIn : parent
                         anchors.topMargin: -3
                         color : "black"
-                        font.pixelSize : 12
+                        font.pixelSize : 11
                         text : modelData.name
                         font.bold : true
                         font.family : Theme.workspaceFontFamily
