@@ -3,6 +3,7 @@ import QtQuick
 import "components"
 import "notifications"
 import "../.."
+import "powerMenu"
 
 PanelWindow{
     id: statusBar
@@ -119,5 +120,15 @@ PanelWindow{
         anchors.top : parent.top
         color : "transparent"
         Notif{}
+    }
+
+    Rectangle{
+        id : powerMenuAnchor
+        height : parent.height
+        width : 10
+        anchors.left : parent.left
+        anchors.top : parent.top
+        color : "transparent"
+        PowerMenu{}
     }
 }
