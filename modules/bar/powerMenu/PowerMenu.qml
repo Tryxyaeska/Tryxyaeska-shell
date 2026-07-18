@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import Quickshell.Io
 import QtQuick.Effects
+import QtQuick.Controls
 
 Item{
     id : powerMenuAnchorMain
@@ -122,6 +123,42 @@ Item{
                             }
                         }
                     }
+                    ToolTip {
+                        visible: bt1.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Power OFF"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
+                        }
+                    }
                     MouseArea{
                         id : bt1
                         anchors.fill : parent
@@ -146,6 +183,42 @@ Item{
                                 duration : 130
                                 easing.type : Easing.OutQuad
                             }
+                        }
+                    }
+                    ToolTip {
+                        visible: bt2.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Restart"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
                         }
                     }
                     MouseArea{
@@ -174,6 +247,42 @@ Item{
                             }
                         }
                     }
+                    ToolTip {
+                        visible: bt3.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Suspend"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
+                        }
+                    }
                     MouseArea{
                         id : bt3
                         anchors.fill : parent
@@ -198,6 +307,42 @@ Item{
                                 duration : 130
                                 easing.type : Easing.OutQuad
                             }
+                        }
+                    }
+                    ToolTip {
+                        visible: bt4.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Hibernate"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
                         }
                     }
                     MouseArea{
@@ -230,6 +375,42 @@ Item{
                             }
                         }
                     }
+                    ToolTip {
+                        visible: bt5.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Crash Hyprland"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
+                        }
+                    }
                     MouseArea{
                         id : bt5
                         anchors.fill : parent
@@ -254,6 +435,42 @@ Item{
                                 duration : 130
                                 easing.type : Easing.OutQuad
                             }
+                        }
+                    }
+                    ToolTip {
+                        visible: bt6.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Lock"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
                         }
                     }
                     MouseArea{
@@ -282,6 +499,42 @@ Item{
                             }
                         }
                     }
+                    ToolTip {
+                        visible: bt7.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Reload"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
+                        }
+                    }
                     MouseArea{
                         id : bt7
                         anchors.fill : parent
@@ -306,6 +559,42 @@ Item{
                                 duration : 130
                                 easing.type : Easing.OutQuad
                             }
+                        }
+                    }
+                    ToolTip {
+                        visible: bt8.containsMouse && visibility
+                        delay: 400
+                        topPadding: 2
+                        bottomPadding: 2
+                        leftPadding: 8
+                        rightPadding: 8
+                        enter: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 0.0
+                                to: 1.0
+                                duration: 150
+                                easing.type: Easing.OutQuad 
+                            }
+                        }
+                        exit: Transition {
+                            NumberAnimation { 
+                                property: "opacity"
+                                from: 1.0
+                                to: 0.0
+                                duration: 120
+                                easing.type: Easing.InQuad 
+                            }
+                        }
+                        contentItem: Text {
+                            text: "Kill"
+                            color: "#ffffff"
+                            font.family: "Space Mono"
+                            font.pixelSize: 12
+                            font.bold : true
+                        }
+                        background: Rectangle {
+                            color: "black"
                         }
                     }
                     MouseArea{
