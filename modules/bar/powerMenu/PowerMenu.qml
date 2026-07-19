@@ -3,6 +3,7 @@ import QtQuick
 import Quickshell.Io
 import QtQuick.Effects
 import QtQuick.Controls
+import ""
 
 Item{
     id : powerMenuAnchorMain
@@ -82,19 +83,19 @@ Item{
                 color : "transparent"
                 height : parent.height
                 width : parent.width
-                Image {
-                        width: parent.width; height: parent.height; anchors.fill: parent
-                        fillMode: Image.PreserveAspectCrop; smooth: true; mipmap: true; antialiasing: true;
-                        source: "/mnt/data/Utility OG/Pictures/destiny (4).jpg"; 
-                        opacity: 0.433; layer.enabled: true
-                        layer.effect: MultiEffect {
-                            blurEnabled: true; blurMax: 8; blur: 0.6
-                            shadowEnabled: false; shadowColor: "#000000"
-                            shadowBlur: 0; shadowVerticalOffset: 0
-                            brightness: 0; contrast: 0.233; saturation: 0.333
-                            colorization: 0.2; colorizationColor: "#1e1e2e"
-                        }
+                Image{
+                    width: parent.width; height: parent.height; anchors.fill: parent
+                    fillMode: Image.PreserveAspectCrop; smooth: true; mipmap: true; antialiasing: true;
+                    source: "/mnt/data/Utility OG/Pictures/destiny (4).jpg"; 
+                    opacity: 0.433; layer.enabled: true
+                    layer.effect: MultiEffect {
+                        blurEnabled: true; blurMax: 8; blur: 0.6
+                        shadowEnabled: false; shadowColor: "#000000"
+                        shadowBlur: 0; shadowVerticalOffset: 0
+                        brightness: 0; contrast: 0.233; saturation: 0.333
+                        colorization: 0.2; colorizationColor: "#1e1e2e"
                     }
+                }
             }
         }
 
