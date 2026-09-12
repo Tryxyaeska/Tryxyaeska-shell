@@ -69,8 +69,8 @@ Item {
         popupWidth: 500
         popupHeight: 300
         menuGap : -2
-        anmtSrc: Theme.intpopupbackground
-        //src : Theme.intpopupbackground
+        //anmtSrc: Theme.intpopupbackground
+        //src : "../../../xtrV/bg-1.jpg"
         blurEnabled : Theme.intblurEnabled
         blur : Theme.intblur
         blurMax : Theme.intblurmax

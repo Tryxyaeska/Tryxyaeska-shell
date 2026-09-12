@@ -349,6 +349,7 @@ Item{
                 onClicked:{ 
                     osCommand.cmd = "~/.config/quickshell/modules/invertedBar/wallpaperSwitcher/scripts/loadPaper.sh '" + paperCenterMain.wallpaperDb[paperCenterMain.currentIndex] + "'"
                     osCommand.running = true
+                    currentIndex = paperCenterMain.currentIndex
                 }
                 onWheel : (wheel) => paperCenterMain.handleScroll(wheel)
             }

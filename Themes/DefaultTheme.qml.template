@@ -24,7 +24,7 @@ QtObject{
     property int batimgheight: 21     
     property string batfontfamily: ""
     // If battery text sits ON the arrow, use on_primary. If it sits on the bar, use on_surface.
-    property color battextCol: '{{colors.on_surface.default.hex}}' 
+    property color battextCol: '{{colors.on_primary_container.default.hex}}' 
     property string batFont: fontFamily
     property int batfontsize: 14
 
@@ -52,7 +52,7 @@ QtObject{
     property int btfontsize: 14
 
     //Clock
-    property color clocktextCol: '{{colors.on_surface.default.hex}}'
+    property color clocktextCol: '{{colors.on_primary_container.default.hex}}'
     property int clockfontsize: 14
     property string clkFont: fontFamily
 
@@ -60,9 +60,9 @@ QtObject{
     property int cpuwidth: 120           
     property int cpuheight: 30           
     property int cpuspacing: 12          
-    property color cpuUsagetextCol: '{{colors.on_surface.default.hex}}' 
+    property color cpuUsagetextCol: '{{colors.on_primary_container.default.hex}}' 
     property int cpuUsagefontsize: 14
-    property color cpuTemptextcol: '{{colors.on_surface.default.hex}}' 
+    property color cpuTemptextcol: '{{colors.on_primary_container.default.hex}}' 
     property int cpuTempfontsize: 14
     property string cpuFont: fontFamily
 
@@ -89,7 +89,7 @@ QtObject{
     property string intFont: fontFamily
     
     //Mpris
-    property color mprisfontCol: '{{colors.on_surface.default.hex}}'
+    property color mprisfontCol: '{{colors.on_primary_container.default.hex}}'
     property string mprisFont: fontFamily
     property int mprisFontsize: 16
 
@@ -98,12 +98,12 @@ QtObject{
     
     //Volume
     property int pulseVolfontsize: 14
-    property color pulseVolfontCol: '{{colors.on_surface.default.hex}}'
+    property color pulseVolfontCol: '{{colors.on_primary_container.default.hex}}'
     property string pulseFont: fontFamily
     
     //Volume Db
     property int pulseDBfontsize: 14
-    property color pulseDBfontCol: '{{colors.on_surface.default.hex}}'
+    property color pulseDBfontCol: '{{colors.on_primary_container.default.hex}}'
     property string pulseDBFont: fontFamily
 
     //Tray

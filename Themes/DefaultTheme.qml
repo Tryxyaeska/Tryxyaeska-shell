@@ -3,15 +3,15 @@ import QtQuick
 QtObject{
 
     //Bar
-    property color barBg: '#bf19120f'
-    property color barBorder: '#a28c85'
+    property color barBg: '#bf151313'
+    property color barBorder: '#9b8e8d'
 
     //Animated popup
-    property color popupCol: '#261e1b'
+    property color popupCol: '#211f1f'
 
    //Arrowshape
-    property color arrowborderCol: '#55433d'
-    property color arrowshapeCol: '#d47859'
+    property color arrowborderCol: '#4e4444'
+    property color arrowshapeCol: '#867272'
     Behavior on arrowshapeCol { 
         ColorAnimation { duration: 500; easing.type: Easing.OutQuart } 
     }
@@ -24,7 +24,7 @@ QtObject{
     property int batimgheight: 21     
     property string batfontfamily: ""
     // If battery text sits ON the arrow, use on_primary. If it sits on the bar, use on_surface.
-    property color battextCol: '#efdfda' 
+    property color battextCol: '#000000' 
     property string batFont: fontFamily
     property int batfontsize: 14
 
@@ -47,12 +47,12 @@ QtObject{
     property double btimageopacity: 0.5
     property double btbrightness: 0.1
     property double btcolorization: 0.46
-    property color btcolorizationCol: '#19120f'
+    property color btcolorizationCol: '#151313'
     property string btFont: fontFamily
     property int btfontsize: 14
 
     //Clock
-    property color clocktextCol: '#efdfda'
+    property color clocktextCol: '#000000'
     property int clockfontsize: 14
     property string clkFont: fontFamily
 
@@ -60,9 +60,9 @@ QtObject{
     property int cpuwidth: 120           
     property int cpuheight: 30           
     property int cpuspacing: 12          
-    property color cpuUsagetextCol: '#efdfda' 
+    property color cpuUsagetextCol: '#000000' 
     property int cpuUsagefontsize: 14
-    property color cpuTemptextcol: '#efdfda' 
+    property color cpuTemptextcol: '#000000' 
     property int cpuTempfontsize: 14
     property string cpuFont: fontFamily
 
@@ -85,11 +85,11 @@ QtObject{
     property double intimageopacity: 0.356
     property double intbrightness: 0.3
     property double intcolorization: 0.46
-    property color intcolorizationCol: '#19120f'
+    property color intcolorizationCol: '#151313'
     property string intFont: fontFamily
     
     //Mpris
-    property color mprisfontCol: '#efdfda'
+    property color mprisfontCol: '#000000'
     property string mprisFont: fontFamily
     property int mprisFontsize: 16
 
@@ -98,12 +98,12 @@ QtObject{
     
     //Volume
     property int pulseVolfontsize: 14
-    property color pulseVolfontCol: '#efdfda'
+    property color pulseVolfontCol: '#000000'
     property string pulseFont: fontFamily
     
     //Volume Db
     property int pulseDBfontsize: 14
-    property color pulseDBfontCol: '#efdfda'
+    property color pulseDBfontCol: '#000000'
     property string pulseDBFont: fontFamily
 
     //Tray
@@ -112,7 +112,7 @@ QtObject{
     property int trayiconWidth: 18       
     
     //Tray Popup
-    property color traypopuptextCol: '#dac1ba'
+    property color traypopuptextCol: '#d2c3c3'
     property int traymenugap: -8         
     property url traypopupbackground: Qt.resolvedUrl("/mnt/data/Utility OG/Pictures/download (59).jpeg")
     property bool trayblurEnabled: true
@@ -123,12 +123,12 @@ QtObject{
     property double trayimageopacity: 0.6
     property double traybrightness: 0.0
     property double traycolorization: 0.4
-    property color traycolorizationCol: '#19120f'
+    property color traycolorizationCol: '#151313'
     property string trayFont: fontFamily
     property int trayFontSize: 16
     
     //Tray ChildPopup
-    property color trayCpopuptextCol: '#dac1ba'
+    property color trayCpopuptextCol: '#d2c3c3'
     property int trayCmenugap: -12        
     property url trayCpopupbackground: Qt.resolvedUrl("/mnt/data/Utility OG/Pictures/download (55).jpeg")
     property bool trayCblurEnabled: true
@@ -139,7 +139,7 @@ QtObject{
     property double trayCimageopacity: 0.6
     property double trayCbrightness: 0.0
     property double trayCcolorization: 0.4
-    property color trayCcolorizationCol: '#19120f'
+    property color trayCcolorizationCol: '#151313'
     property string trayCFont: fontFamily
     property int trayCFontSize: 16
 
@@ -148,7 +148,7 @@ QtObject{
     property string workspaceFontFamily : fontFamily
 
     //FONT STYLE
-    property color fontCol: '#efdfda'
+    property color fontCol: '#e7e1e0'
     property string fontFamily: "Space Mono"
     property int fontSize: 14
 }
