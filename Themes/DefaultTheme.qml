@@ -15,6 +15,7 @@ QtObject{
     Behavior on arrowshapeCol { 
         ColorAnimation { duration: 500; easing.type: Easing.OutQuart } 
     }
+    property color invArrowshapeCol : '#d9c1c1'
     
     //Battery
     property int batwidth: 120        
@@ -38,7 +39,7 @@ QtObject{
     property int btpopupwidth: 250     
     property int btpopupheight: 220    
     property int btmenugap: -2         
-    property url btpopupbackground:  Qt.resolvedUrl("/mnt/data/Utility OG/Pictures/nierViolin.jpg")
+    property url btpopupbackground:  Qt.resolvedUrl("/home/therookie/Alliance2.0/Preservence/Utility OG/Pictures/nierViolin.jpg")
     property bool btblurEnabled: true
     property double btblur: 0.6
     property double btblurmax: 10
@@ -47,7 +48,7 @@ QtObject{
     property double btimageopacity: 0.5
     property double btbrightness: 0.1
     property double btcolorization: 0.46
-    property color btcolorizationCol: '#151313'
+    property color btcolorizationCol: '#d9c1c1'
     property string btFont: fontFamily
     property int btfontsize: 14
 
@@ -76,16 +77,16 @@ QtObject{
     property int intpopupwidth: 500      
     property int intpopupheight: 300     
     property int intmenugap: -2          
-    property url intpopupbackground: Qt.resolvedUrl("/mnt/data/Utility OG/Pictures/download (3).gif")
+    property url intpopupbackground: Qt.resolvedUrl("/home/therookie/Alliance2.0/Preservence/Utility OG/Pictures/download (3).gif")
     property bool intblurEnabled: true
     property double intblur: 0.6
     property double intblurmax: 16
     property double intcontrast: 1.2
     property double intsaturation: 0.6
-    property double intimageopacity: 0.356
+    property double intimageopacity: 0.18
     property double intbrightness: 0.3
-    property double intcolorization: 0.46
-    property color intcolorizationCol: '#151313'
+    property double intcolorization: 0.7
+    property color intcolorizationCol: '#d9c1c1'
     property string intFont: fontFamily
     
     //Mpris
@@ -114,7 +115,7 @@ QtObject{
     //Tray Popup
     property color traypopuptextCol: '#d2c3c3'
     property int traymenugap: -8         
-    property url traypopupbackground: Qt.resolvedUrl("/mnt/data/Utility OG/Pictures/download (59).jpeg")
+    property url traypopupbackground: Qt.resolvedUrl("/home/therookie/Alliance2.0/Preservence/Utility OG/Pictures/download (59).jpeg")
     property bool trayblurEnabled: true
     property double trayblur: 0.6
     property double trayblurmax: 8
@@ -123,14 +124,14 @@ QtObject{
     property double trayimageopacity: 0.6
     property double traybrightness: 0.0
     property double traycolorization: 0.4
-    property color traycolorizationCol: '#151313'
+    property color traycolorizationCol: '#d9c1c1'
     property string trayFont: fontFamily
     property int trayFontSize: 16
     
     //Tray ChildPopup
     property color trayCpopuptextCol: '#d2c3c3'
     property int trayCmenugap: -12        
-    property url trayCpopupbackground: Qt.resolvedUrl("/mnt/data/Utility OG/Pictures/download (55).jpeg")
+    property url trayCpopupbackground: Qt.resolvedUrl("/home/therookie/Alliance2.0/Preservence/Utility OG/Pictures/download (55).jpeg")
     property bool trayCblurEnabled: true
     property double trayCblur: 0.6
     property double trayCblurmax: 8
@@ -139,7 +140,7 @@ QtObject{
     property double trayCimageopacity: 0.6
     property double trayCbrightness: 0.0
     property double trayCcolorization: 0.4
-    property color trayCcolorizationCol: '#151313'
+    property color trayCcolorizationCol: '#d9c1c1'
     property string trayCFont: fontFamily
     property int trayCFontSize: 16
 

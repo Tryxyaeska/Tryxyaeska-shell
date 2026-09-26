@@ -4,6 +4,7 @@ import Quickshell.Io
 import QtQuick.Effects
 import Qt.labs.folderlistmodel
 import "../"
+import "../../../"
 
 Item{
     id : paperSwapperAnchor
@@ -156,7 +157,7 @@ Item{
             id : leftBorderArrow
             width : 60
             height : parent.height
-            boxColor : "white"
+            boxColor : Theme.invArrowshapeCol
             arrowLeft : -1
             arrowRight : 1
             arrowDepth : 56
@@ -168,13 +169,13 @@ Item{
             height : 3
             anchors.top : parent.top
             anchors.horizontalCenter : parent.horizontalCenter
-            color : "white"
+            color : Theme.invArrowshapeCol
         }
         ArrowShape{
             id : rightBorderArrow
             width : 60
             height : parent.height
-            boxColor : "white"
+            boxColor : Theme.invArrowshapeCol
             arrowLeft : 1
             arrowRight : -1
             arrowDepth : 56
@@ -186,7 +187,7 @@ Item{
             height : 3
             anchors.bottom : parent.bottom
             anchors.horizontalCenter : parent.horizontalCenter
-            color : "white"
+            color : Theme.invArrowshapeCol
         }
 
         ArrowShape{
@@ -227,7 +228,7 @@ Item{
             anchors.right: addWallpaperArrow.left
             anchors.verticalCenter : parent.verticalCenter
             anchors.margins : {right : -30}
-            boxColor: "white"
+            boxColor: Theme.invArrowshapeCol
             arrowLeft: 1
             arrowRight: -1
             arrowDepth: 56
@@ -274,7 +275,7 @@ Item{
             anchors.left: leftWallpaperArrow.right
             anchors.verticalCenter : parent.verticalCenter
             anchors.margins : {left : -30}
-            boxColor: "white"
+            boxColor: Theme.invArrowshapeCol
             arrowLeft: -1
             arrowRight: 1
             arrowDepth: 56
@@ -321,7 +322,7 @@ Item{
             anchors.right: rightWallpaperArrow.left
             anchors.verticalCenter : parent.verticalCenter
             anchors.margins : {left : -30}
-            boxColor: "white"
+            boxColor: Theme.invArrowshapeCol
             arrowLeft: 1
             arrowRight: -1
             arrowDepth: 56
@@ -362,7 +363,7 @@ Item{
             anchors.right: centreWallpaperArrow.left
             anchors.verticalCenter : parent.verticalCenter
             anchors.margins : {right : -56}
-            boxColor: "white"
+            boxColor: Theme.invArrowshapeCol
             arrowLeft: -1
             arrowRight: 1
             arrowDepth: 56
@@ -375,7 +376,7 @@ Item{
             anchors.left: centreWallpaperArrow.right
             anchors.verticalCenter : parent.verticalCenter
             anchors.margins : {left : -56}
-            boxColor: "white"
+            boxColor: Theme.invArrowshapeCol
             arrowLeft: 1
             arrowRight: -1
             arrowDepth: 56

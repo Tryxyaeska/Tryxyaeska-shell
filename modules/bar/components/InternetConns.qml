@@ -69,7 +69,7 @@ Item {
         popupWidth: 500
         popupHeight: 300
         menuGap : -2
-        //anmtSrc: Theme.intpopupbackground
+        anmtSrc: Theme.intpopupbackground
         //src : "../../../xtrV/bg-1.jpg"
         blurEnabled : Theme.intblurEnabled
         blur : Theme.intblur
@@ -79,7 +79,7 @@ Item {
         imgOpac : Theme.intimageopacity
         brightness : Theme.intbrightness
         colorization : Theme.intcolorization
-        colorizationColor : Theme.intcolorizationCol
+        colorizationColor : Theme.invArrowshapeCol
 
         Process {
             id: osCommand

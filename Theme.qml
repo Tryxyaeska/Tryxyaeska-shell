@@ -21,7 +21,7 @@ QtObject{
    //Arrowshape
     property color arrowborderCol: customtheme.arrowborderCol
     property color arrowshapeCol: customtheme.arrowshapeCol
-    
+    property color invArrowshapeCol : customtheme.invArrowshapeCol
 
 
 

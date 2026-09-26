@@ -25,6 +25,16 @@ ArrowShape{
         anchors.fill : parent
         hoverEnabled : true
     }
+    
+    // Connections {
+    //     target: Hyprland.workspaces
+
+    //     function onValuesChanged() {
+    //         for (let x of Hyprland.workspaces.values) {
+    //             console.log(x.name)
+    //         }
+    //     }
+    // }
 
     Row {
         anchors.centerIn : parent
@@ -33,7 +43,7 @@ ArrowShape{
         height : parent.height
         
         Repeater {
-            model: Hyprland.workspaces.values
+            model: Hyprland.workspaces.values.filter(x => !x.name.startsWith("special:"))
             
             delegate: Rectangle {
                 

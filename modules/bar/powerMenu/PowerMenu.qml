@@ -91,10 +91,10 @@ Item{
                     Image{
                         width: parent.width; height: parent.height; anchors.fill: parent
                         fillMode: Image.PreserveAspectCrop; smooth: true; mipmap: true; antialiasing: true;
-                        source: "/home/therookie/Alliance2.0/Preservence/Utility OG/Pictures/destiny (4).jpg"; 
-                        opacity: 0.433; layer.enabled: true
+                        source: "/home/therookie/Alliance2.0/Preservence/Utility OG/Pictures/D0UXGhbW0AI7KWS.jpg"; 
+                        opacity: 0.48; layer.enabled: true
                         layer.effect: MultiEffect {
-                            blurEnabled: true; blurMax: 8; blur: 0.6
+                            blurEnabled: true; blurMax: 2; blur: 0.2
                             shadowEnabled: false; shadowColor: "#000000"
                             shadowBlur: 0; shadowVerticalOffset: 0
                             brightness: 0; contrast: 0.233; saturation: 0.333
