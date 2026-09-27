@@ -12,8 +12,10 @@ Item {
     property int borderWidth: 1
 
     property real slantOffset: 16
-
     property real cornerRadius: 8
+
+    property bool slantLeft: true
+    property bool slantRight: true
 
     property bool borderTop: false
     property bool borderBottom: false
@@ -21,6 +23,13 @@ Item {
     property bool borderRight: false
 
     default property alias innerContent: container.data
+
+    // Internal computed geometries based on slant flags
+    readonly property real effLeftSlant: slantLeft ? slantOffset : 0
+    readonly property real effLeftRadius: slantLeft ? cornerRadius : 0
+
+    readonly property real effRightSlant: slantRight ? slantOffset : 0
+    readonly property real effRightRadius: slantRight ? cornerRadius : 0
 
     Behavior on boxColor {
         ColorAnimation {
@@ -44,36 +53,42 @@ Item {
 
             startX: 0; startY: 0
 
+            // Top straight horizontal line
             PathLine { x: root.width; y: 0 }
 
+            // Right side transition (slanted or straight vertical)
             PathLine { 
-                x: root.width - root.slantOffset + root.cornerRadius
-                y: root.height - root.cornerRadius 
+                x: root.width - root.effRightSlant + root.effRightRadius
+                y: root.height - root.effRightRadius 
             }
 
+            // Bottom-right corner (curved if slanted, sharp/straight if false)
             PathQuad { 
-                x: root.width - root.slantOffset - root.cornerRadius
+                x: root.width - root.effRightSlant - root.effRightRadius
                 y: root.height
-                controlX: root.width - root.slantOffset
+                controlX: root.width - root.effRightSlant
                 controlY: root.height
             }
 
+            // Bottom edge
             PathLine { 
-                x: root.slantOffset + root.cornerRadius
+                x: root.effLeftSlant + root.effLeftRadius
                 y: root.height 
             }
 
+            // Bottom-left corner (curved if slanted, sharp/straight if false)
             PathQuad { 
-                x: root.slantOffset - root.cornerRadius
-                y: root.height - root.cornerRadius
-                controlX: root.slantOffset
+                x: root.effLeftSlant - root.effLeftRadius
+                y: root.height - root.effLeftRadius
+                controlX: root.effLeftSlant
                 controlY: root.height
             }
 
+            // Left side back to top-left
             PathLine { x: 0; y: 0 }
         }
 
-        //L2: TOP BORDER
+        // L2: TOP BORDER
         ShapePath {
             fillColor: "transparent"
             strokeWidth: root.borderWidth
@@ -84,52 +99,54 @@ Item {
             PathLine { x: root.width; y: 0 }
         }
 
-        //L3: RIGHT BORDER + BOTTOMRIGHT CURVE
+        // L3: RIGHT BORDER + BOTTOM-RIGHT CORNER
         ShapePath {
             fillColor: "transparent"
             strokeWidth: root.borderWidth
             strokeColor: root.borderRight ? root.borderColor : "transparent"
-            capStyle: ShapePath.RoundCap
+            capStyle: root.slantRight ? ShapePath.RoundCap : ShapePath.FlatCap
 
             startX: root.width; startY: 0
             PathLine { 
-                x: root.width - root.slantOffset + root.cornerRadius
-                y: root.height - root.cornerRadius 
+                x: root.width - root.effRightSlant + root.effRightRadius
+                y: root.height - root.effRightRadius 
             }
             PathQuad { 
-                x: root.width - root.slantOffset - root.cornerRadius
+                x: root.width - root.effRightSlant - root.effRightRadius
                 y: root.height
-                controlX: root.width - root.slantOffset
+                controlX: root.width - root.effRightSlant
                 controlY: root.height
             }
         }
 
-        //L4: BOTTOM BORDER
+        // L4: BOTTOM BORDER
         ShapePath {
             fillColor: "transparent"
             strokeWidth: root.borderWidth
             strokeColor: root.borderBottom ? root.borderColor : "transparent"
             capStyle: ShapePath.FlatCap
 
-            startX: root.width - root.slantOffset - root.cornerRadius; startY: root.height
+            startX: root.width - root.effRightSlant - root.effRightRadius
+            startY: root.height
             PathLine { 
-                x: root.slantOffset + root.cornerRadius
+                x: root.effLeftSlant + root.effLeftRadius
                 y: root.height 
             }
         }
 
-        //L5: BOTTOMLEFT CURVE + LEFT BORDER
+        // L5: BOTTOM-LEFT CORNER + LEFT BORDER
         ShapePath {
             fillColor: "transparent"
             strokeWidth: root.borderWidth
             strokeColor: root.borderLeft ? root.borderColor : "transparent"
-            capStyle: ShapePath.RoundCap
+            capStyle: root.slantLeft ? ShapePath.RoundCap : ShapePath.FlatCap
 
-            startX: root.slantOffset + root.cornerRadius; startY: root.height
+            startX: root.effLeftSlant + root.effLeftRadius
+            startY: root.height
             PathQuad { 
-                x: root.slantOffset - root.cornerRadius
-                y: root.height - root.cornerRadius
-                controlX: root.slantOffset
+                x: root.effLeftSlant - root.effLeftRadius
+                y: root.height - root.effLeftRadius
+                controlX: root.effLeftSlant
                 controlY: root.height
             }
             PathLine { x: 0; y: 0 }
@@ -139,7 +156,7 @@ Item {
     Item {
         id: container
         anchors.fill: parent
-        anchors.leftMargin: root.slantOffset + 4
-        anchors.rightMargin: root.slantOffset + 4
+        anchors.leftMargin: root.effLeftSlant + 4
+        anchors.rightMargin: root.effRightSlant + 4
     }
 }

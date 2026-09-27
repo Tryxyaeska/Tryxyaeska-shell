@@ -148,9 +148,8 @@ QtObject{
     property int workspaceSpacing: 12  
     property string workspaceFontFamily : fontFamily
 
-    // ==========================================
-    // FLAKE ARCHITECTURE SPECIFIC TOKENS
-    // ==========================================
+
+    //FlakeShape
     // Surfaces & Containers
     property color flakeBg: '{{colors.background.default.hex}}'
     property color flakeBorderCol: '{{colors.outline_variant.default.hex}}'
