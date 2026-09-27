@@ -148,6 +148,28 @@ QtObject{
     property int workspaceSpacing: 12  
     property string workspaceFontFamily : fontFamily
 
+    // ==========================================
+    // FLAKE ARCHITECTURE SPECIFIC TOKENS
+    // ==========================================
+    // Surfaces & Containers
+    property color flakeBg: '{{colors.background.default.hex}}'
+    property color flakeBorderCol: '{{colors.outline_variant.default.hex}}'
+    property color flakeAccentCol: '{{colors.primary.default.hex}}'
+    property color flakeContainerCol: '{{colors.surface_container.default.hex}}'
+    property color flakeContainerLowCol: '{{colors.surface_container_lowest.default.hex}}'
+    
+    // Typography
+    property color flakePrimaryTextCol: '{{colors.on_surface.default.hex}}'
+    property color flakeSubTextCol: '{{colors.on_surface_variant.default.hex}}'
+    property color flakeAccentTextCol: '{{colors.primary.default.hex}}'
+    property color flakeOnAccentTextCol: '{{colors.on_primary.default.hex}}'
+
+    // Interactive States & Indicators
+    property color flakeActiveIndicator: '{{colors.primary.default.hex}}'
+    property color flakeInactiveIndicator: '{{colors.outline.default.hex}}'
+    property color flakeErrorCol: '{{colors.error.default.hex}}'
+    property color flakeHoverCol: '{{colors.surface_bright.default.hex}}'
+
     //FONT STYLE
     property color fontCol: '{{colors.on_surface.default.hex}}'
     property string fontFamily: "Space Mono"

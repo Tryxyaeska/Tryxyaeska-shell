@@ -4,6 +4,7 @@ import "components"
 import "notifications"
 import "../.."
 import "powerMenu"
+import "myyy"
 
 PanelWindow{
     id: statusBar
@@ -16,6 +17,10 @@ PanelWindow{
 
     implicitHeight: 30
     color : Theme.barBg
+
+    Flake{
+        id : mainFlake
+    }
 
     
     Rectangle {
@@ -30,6 +35,17 @@ PanelWindow{
             color: '#ffffff' 
             anchors.top: parent.bottom
             anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        MouseArea{
+            id : clickHandler
+            anchors.fill : parent
+            acceptedButtons: Qt.AllButtons
+            onClicked: (mouse) => {
+                if(mouse.button == Qt.RightButton){
+                    mainFlake.visible = true
+                }
+            }
         }
 
         Row{

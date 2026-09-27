@@ -2,7 +2,7 @@ pragma Singleton
 import QtQuick
 import "Themes"
 
-QtObject{
+QtObject {
     
     readonly property QtObject customtheme: DefaultTheme {}
 
@@ -15,16 +15,31 @@ QtObject{
     property color popupCol: customtheme.popupCol
 
 
-
-
-
    //Arrowshape
     property color arrowborderCol: customtheme.arrowborderCol
     property color arrowshapeCol: customtheme.arrowshapeCol
-    property color invArrowshapeCol : customtheme.invArrowshapeCol
+    property color invArrowshapeCol: customtheme.invArrowshapeCol
 
 
+    //FlakeShape & Flake Architecture
+    property color flakeShapeCol: customtheme.flakeShapeCol
+    property color flakeFontCol: customtheme.flakeFontCol
 
+    property color flakeBg: customtheme.flakeBg
+    property color flakeBorderCol: customtheme.flakeBorderCol
+    property color flakeAccentCol: customtheme.flakeAccentCol
+    property color flakeContainerCol: customtheme.flakeContainerCol
+    property color flakeContainerLowCol: customtheme.flakeContainerLowCol
+
+    property color flakePrimaryTextCol: customtheme.flakePrimaryTextCol
+    property color flakeSubTextCol: customtheme.flakeSubTextCol
+    property color flakeAccentTextCol: customtheme.flakeAccentTextCol
+    property color flakeOnAccentTextCol: customtheme.flakeOnAccentTextCol
+
+    property color flakeActiveIndicator: customtheme.flakeActiveIndicator
+    property color flakeInactiveIndicator: customtheme.flakeInactiveIndicator
+    property color flakeErrorCol: customtheme.flakeErrorCol
+    property color flakeHoverCol: customtheme.flakeHoverCol
 
 
     //Battery
@@ -38,9 +53,6 @@ QtObject{
     property int batfontsize: customtheme.batfontsize
 
 
-
-
-
     //Bluetooth
     property int btwidth: 50           //removed
     property int btheight: 30          //removed
@@ -50,7 +62,7 @@ QtObject{
     property int btpopupwidth: 250     //removed
     property int btpopupheight: 220    //removed
     property int btmenugap: -2         //removed
-    property url btpopupbackground:  customtheme.btpopupbackground
+    property url btpopupbackground: customtheme.btpopupbackground
     property bool btblurEnabled: customtheme.btblurEnabled
     property double btblur: customtheme.btblur
     property double btblurmax: customtheme.btblurmax
@@ -64,16 +76,10 @@ QtObject{
     property int btfontsize: customtheme.btfontSize
 
 
-
-
-
     //Clock
     property color clocktextCol: customtheme.clocktextCol
     property int clockfontsize: customtheme.clockFontSize
     property string clkFont: customtheme.clkFont
-
-
-
 
 
     //CPU
@@ -85,9 +91,6 @@ QtObject{
     property color cpuTemptextcol: customtheme.cpuTemptextcol //Temperature
     property int cpuTempfontsize: customtheme.cpuTempfontsize
     property string cpuFont: customtheme.cpuFont
-
-
-
 
 
     //InternetConns
@@ -110,9 +113,6 @@ QtObject{
     property double intcolorization: customtheme.intcolorization
     property color intcolorizationCol: customtheme.intcolorizationCol
     property string intFont: customtheme.intFont
-    
-
-
 
 
     //Mpris
@@ -120,9 +120,6 @@ QtObject{
     property string mprisFont: customtheme.mprisFont
     property int mprisFontsize: customtheme.mprisFontsize
 
-
-
-    
 
     //PulseWire
     property int pulsespacing: 10       //removed
@@ -134,10 +131,6 @@ QtObject{
     property int pulseDBfontsize: customtheme.pulseDBfontsize
     property color pulseDBfontCol: customtheme.pulseDBfontCol
     property string pulseDBFont: customtheme.pulseDBFont
-
-
-
-
 
 
     //Tray
@@ -176,10 +169,13 @@ QtObject{
     property int trayCFontSize: customtheme.trayCFontSize
 
 
-
-
     //WorkSpaces
     property int workspaceSpacing: 12  //removed
-    property string workspaceFontFamily : customtheme.workspaceFontFamily
+    property string workspaceFontFamily: customtheme.workspaceFontFamily
 
+
+    //Base Typography
+    property color fontCol: customtheme.fontCol
+    property string fontFamily: customtheme.fontFamily
+    property int fontSize: customtheme.fontSize
 }

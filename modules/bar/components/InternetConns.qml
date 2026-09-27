@@ -5,11 +5,16 @@ import Quickshell.Widgets
 import Quickshell.Io
 import Quickshell.Services.SystemTray
 import "../../.."
+import "../myyy"
 
 Item {
     height: 30
     width: 50
     id: networkMain
+
+    FlakeConns {
+        id: flakeConns
+    }
 
     ArrowShape {
         id: mainButton
@@ -42,8 +47,8 @@ Item {
         HoverHandler {
             id: barHover
             onHoveredChanged: {
-                if (hovered) {
-                    myPopup.open()
+                if (hovered && !flakeConns.visible) {
+                    myPopup.open();
                 }
             }
         }
@@ -52,7 +57,16 @@ Item {
             anchors.fill: parent
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
-            onClicked: myPopup.toggle() 
+            acceptedButtons: Qt.AllButtons
+
+            onClicked: (mouse) => {
+                if (mouse.button === Qt.RightButton) {
+                    if (myPopup.isOpen) myPopup.close();
+                    flakeConns.visible = !flakeConns.visible;
+                } else if (mouse.button === Qt.LeftButton) {
+                    myPopup.toggle();
+                }
+            }
         }
     }
 
